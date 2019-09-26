@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "531734795026",
+    "firebase_url": "https://fisheye-fe194.firebaseio.com",
+    "project_id": "fisheye-fe194",
+    "storage_bucket": "fisheye-fe194.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531734795026:android:f7eccbf257f049125d19cb",
+        "android_client_info": {
+          "package_name": "app.g4a.com.fisheye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531734795026-p1rqs6vklk4pge07eq97q5i3b0qnoq5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.g4a.com.fisheye",
+            "certificate_hash": "4584a4f8eb7918023b763b8a5cdc68dfb973e47c"
+          }
+        },
+        {
+          "client_id": "531734795026-k0rgcrcsfods0ou380osd3fgmdnqr1pv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe76RaVPp_YGAIonKfLswFIoTgz6sGo9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531734795026-k0rgcrcsfods0ou380osd3fgmdnqr1pv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

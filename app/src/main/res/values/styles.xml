@@ -1,0 +1,85 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextViewTitle">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="EditTextDefault">
+        <item name="android:fontFamily">montserrat</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="EditTextDefaultPrimary">
+        <item name="android:fontFamily">montserrat</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ButtonFilled">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_filled</item>
+    </style>
+
+    <style name="ButtonFilledSecondary">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_filled_dark</item>
+    </style>
+
+    <style name="ButtonCorner">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_corner</item>
+    </style>
+
+    <style name="ButtonCornerDark">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_corner_dark</item>
+    </style>
+
+    <style name="ButtonSquare">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_square</item>
+    </style>
+
+    <style name="ButtonInvi">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_invi_corner</item>
+    </style>
+
+
+
+</resources>

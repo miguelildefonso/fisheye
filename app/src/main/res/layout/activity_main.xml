@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Modules.MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/bg_screen">
+
+    <ImageView
+        android:id="@+id/imageview_back_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Main Menu"
+        style="@style/TextViewTitle"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textview_pond_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pond Name"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="#2a95db"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp">
+
+        <LinearLayout
+            android:id="@+id/linearlayout_water_quality"
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/button_filled_dark"
+            android:layout_marginRight="5dp"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_waterquality"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Water Quality"
+                android:textAlignment="center"
+                style="@style/TextViewTitle"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/button_filled_dark"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textAlignment="center"
+                style="@style/TextViewTitle"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="-30dp">
+
+        <LinearLayout
+            android:id="@+id/linearlayout_statistics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/button_filled_dark"
+            android:layout_marginRight="5dp"
+            android:padding="10dp"
+            android:layout_marginBottom="18dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_stats"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Statistics"
+                android:textAlignment="center"
+                style="@style/TextViewTitle"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearlayout_pondinfo"
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/button_filled_dark"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pond Info"
+                android:textAlignment="center"
+                style="@style/TextViewTitle"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

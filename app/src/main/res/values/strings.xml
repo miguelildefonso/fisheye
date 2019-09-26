@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FishEye</string>
+    <string name="thesis_title">Automated Fish Pond Monitoring and Control System Using
+        Arduino and Raspberry Pi with Mobile Application</string>
+    <string name="team">Ildefonso, Miguel Angelo DC.\n
+    Cabeseno, Mary Jane B.\n
+    Legaspi, Jean Rochell C.\n
+    Mendoza, Rizabel\n
+    Rojo, Mark David\n</string>
+    <string name="input_error_name">Name required</string>
+    <string name="input_error_email">Email required</string>
+    <string name="input_error_username">Username required</string>
+    <string name="input_error_password">Password required</string>
+    <string name="input_error_phone">Phone required</string>
+    <string name="input_error_password_length">Password should be at least 6 characters long</string>
+    <string name="input_error_phone_invalid">Enter a valid phone number</string>
+    <string name="registration_success">Registered Successfully</string>
+    <string name="input_error_email_invalid">Enter a valid email</string>
+
+</resources>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Modules.Water_Quality"
+    android:orientation="vertical"
+    android:background="@drawable/bg_screen">
+
+    <ImageView
+        android:id="@+id/imageview_back_waterq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Water\nQuality"
+        android:textAlignment="center"
+        style="@style/TextViewTitle"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="75dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageview_date"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_date"/>
+
+                <TextView
+                    android:id="@+id/textview_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/imageview_date"
+                    android:paddingLeft="20dp"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_centerVertical="true"/>
+
+             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageview_clock"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_clock"/>
+
+                <TextClock
+                    android:id="@+id/textclock_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/imageview_clock"
+                    android:paddingLeft="20dp"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            //dissolved oxygen
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                style="@style/ButtonInvi"
+                android:layout_marginHorizontal="30dp"
+                android:padding="10dp"
+                android:elevation="5dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dissolved\nOxygen Level"
+                    style="@style/TextViewTitle"
+                    android:layout_marginBottom="5dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_do"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/ic_do"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:id="@+id/textview_DO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_do"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="10 mg/L"
+                        style="@style/TextViewTitle"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorPrimaryDark" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            //water temperature
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                style="@style/ButtonInvi"
+                android:layout_marginHorizontal="30dp"
+                android:padding="10dp"
+                android:elevation="5dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Water\nTemperature"
+                    style="@style/TextViewTitle"
+                    android:layout_marginBottom="5dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_wtemp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/ic_watertemp"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:id="@+id/textview_water_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_wtemp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="100 C"
+                        style="@style/TextViewTitle"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorPrimaryDark" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            //air temperature
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                style="@style/ButtonInvi"
+                android:layout_marginHorizontal="30dp"
+                android:padding="10dp"
+                android:elevation="5dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Air\nTemperature"
+                    style="@style/TextViewTitle"
+                    android:layout_marginBottom="5dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_atemp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/ic_airtemp"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:id="@+id/textview_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_atemp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="30 C"
+                        style="@style/TextViewTitle"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorPrimaryDark" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            //ph level
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                style="@style/ButtonInvi"
+                android:layout_marginHorizontal="30dp"
+                android:padding="10dp"
+                android:elevation="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pH Level"
+                    style="@style/TextViewTitle"
+                    android:layout_marginBottom="5dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_ph"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/ic_ph"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:id="@+id/textview_ph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_ph"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="5.4"
+                        style="@style/TextViewTitle"
+                        android:textSize="30sp"
+                        android:textColor="@color/colorPrimaryDark" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
