@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView image_back_menu;
     LinearLayout linear_water_quality, linear_settings, linear_statistics, linear_pondinfo;
     TextView text_pond_Name;
+    Select_Pond select = new Select_Pond();
 
     String pondName;
 
@@ -30,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         linear_pondinfo = findViewById(R.id.linearlayout_pondinfo);
         text_pond_Name = findViewById(R.id.textview_pond_name);
 
-        Intent intent = getIntent();
-        pondName = intent.getStringExtra("Pond_No");
-        text_pond_Name.setText(pondName);
+        text_pond_Name.setText(select.getString());
+
+
 
         image_back_menu.setOnClickListener(new View.OnClickListener() {
             @Override

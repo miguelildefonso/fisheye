@@ -26,7 +26,7 @@
         <activity android:name=".Modules.Account_Settings" />
         <activity android:name=".Modules.Water_Quality" />
         <activity android:name=".Modules.Account_Setting_Pword" />
-        <activity android:name=".Modules.Account_Setting_Username" />
+        <activity android:name=".Modules.Account_Setting_Mobile" />
         <activity android:name=".Modules.Login_Activity" />
         <activity android:name=".Modules.MainActivity" />
     </application>

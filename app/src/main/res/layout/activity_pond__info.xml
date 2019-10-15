@@ -60,7 +60,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(in meters)"
+            android:text="(length x width x depth)"
             android:textSize="12dp"
             android:textColor="#2a95db"
             android:layout_marginBottom="20dp"/>

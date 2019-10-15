@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Modules.Account_Setting_Username"
+    tools:context=".Modules.Account_Setting_Mobile"
     android:background="@drawable/bg_screen"
     android:orientation="vertical">
 
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Username"
+        android:text="Change Mobile Number"
         android:textAlignment="center"
         android:textSize="16dp"
         android:textColor="#2a95db"
@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter new username"
+            android:text="Enter new mobile number"
             style="@style/EditTextDefault"
             android:textColor="#2a95db"
             android:textSize="16sp"
@@ -73,13 +73,14 @@
                     android:layout_marginTop="8dp"/>
 
                 <EditText
-                    android:id="@+id/edittext_change_username"
+                    android:id="@+id/edittext_change_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/image_username"
                     android:paddingLeft="20dp"
-                    android:hint="username"
-                    style="@style/ButtonInvi"/>
+                    android:hint="09*********"
+                    style="@style/ButtonInvi"
+                    android:inputType="number"/>
 
             </RelativeLayout>
 

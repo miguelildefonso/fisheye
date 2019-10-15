@@ -64,7 +64,8 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/image_username"
                     android:paddingLeft="20dp"
-                    android:hint="username"
+                    android:hint="email"
+                    android:inputType="textEmailAddress"
                     style="@style/ButtonInvi"/>
 
             </RelativeLayout>

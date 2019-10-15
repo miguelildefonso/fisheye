@@ -9,7 +9,6 @@ import app.g4a.com.fisheye.R;
 
 public class Splash_Screen extends AppCompatActivity {
 
-    ProgressBar progressSplash;
     int i;
 
     @Override
@@ -17,7 +16,6 @@ public class Splash_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash__screen);
 
-        progressSplash = findViewById(R.id.progressBar_splash);
         Thread thread = new Thread(){
             @Override
             public void run() {
@@ -33,8 +31,7 @@ public class Splash_Screen extends AppCompatActivity {
                     }catch(InterruptedException e){
                         e.printStackTrace();
                     }
-                    progressSplash.setProgress(i);
-                    i+=10;
+                    i+=20;
                 }
             }
         };

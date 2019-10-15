@@ -11,20 +11,20 @@ import android.widget.TextView;
 
 import app.g4a.com.fisheye.R;
 
-public class Account_Setting_Username extends AppCompatActivity {
+public class Account_Setting_Mobile extends AppCompatActivity {
 
     ImageView image_back_account_username;
-    EditText edit_change_username, edit_user_password;
+    EditText edit_change_mobile, edit_user_password;
     Button button_user_change;
     TextView text_cancel_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account__setting__username);
+        setContentView(R.layout.activity_account__setting__mobile);
 
         image_back_account_username = findViewById(R.id.imageview_back_account_username);
-        edit_change_username = findViewById(R.id.edittext_change_username);
+        edit_change_mobile = findViewById(R.id.edittext_change_mobile);
         edit_user_password = findViewById(R.id.edittext_user_password);
         button_user_change = findViewById(R.id.button_user_change);
         text_cancel_user = findViewById(R.id.textview_cancel_user);
@@ -32,7 +32,7 @@ public class Account_Setting_Username extends AppCompatActivity {
         image_back_account_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Account_Setting_Username.this,Account_Settings.class);
+                Intent intent = new Intent(Account_Setting_Mobile.this,Account_Settings.class);
                 startActivity(intent);
             }
         });

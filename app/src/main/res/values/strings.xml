@@ -16,5 +16,6 @@
     <string name="input_error_phone_invalid">Enter a valid phone number</string>
     <string name="registration_success">Registered Successfully</string>
     <string name="input_error_email_invalid">Enter a valid email</string>
+    <string name="dialog_login">You have exceeded your limit in login attempts.\nThe app will close.</string>
 
 </resources>

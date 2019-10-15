@@ -34,7 +34,7 @@ public class Account_Settings extends AppCompatActivity {
         text_change_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Account_Settings.this,Account_Setting_Username.class);
+                Intent intent = new Intent(Account_Settings.this, Account_Setting_Mobile.class);
                 startActivity(intent);
             }
         });

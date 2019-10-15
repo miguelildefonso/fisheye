@@ -23,7 +23,7 @@ import app.g4a.com.fisheye.R;
 
 public class Register_User extends AppCompatActivity {
 
-    EditText edit_name, edit_contact, edit_username_reg, edit_password_reg, edit_email_reg;
+    EditText edit_name, edit_contact, edit_password_reg, edit_password_retype_reg, edit_email_reg;
     Button btn_register;
     TextView text_cancel_reg;
     ProgressBar progressBar;
@@ -38,8 +38,8 @@ public class Register_User extends AppCompatActivity {
         edit_name = findViewById(R.id.edittext_name);
         edit_contact = findViewById(R.id.edittext_contact);
         edit_email_reg = findViewById(R.id.edittext_email_reg);
-        edit_username_reg = findViewById(R.id.edittext_username_reg);
         edit_password_reg = findViewById(R.id.edittext_password_reg);
+        edit_password_retype_reg = findViewById(R.id.edittext_retype_password_reg);
         btn_register = findViewById(R.id.button_register);
         text_cancel_reg = findViewById(R.id.textview_cancel_registration);
         progressBar = findViewById(R.id.progressbar_register);
@@ -64,8 +64,8 @@ public class Register_User extends AppCompatActivity {
     private void registerUser(){
         final String name = edit_name.getText().toString().trim();
         final String email = edit_email_reg.getText().toString().trim();
-        final String username = edit_username_reg.getText().toString().trim();
         String password = edit_password_reg.getText().toString().trim();
+        String rePassword = edit_password_retype_reg.getText().toString().trim();
         final String phone = edit_contact.getText().toString().trim();
 
         //validations
@@ -84,11 +84,6 @@ public class Register_User extends AppCompatActivity {
             edit_email_reg.requestFocus();
         }
 
-        if (username.isEmpty()) {
-            edit_username_reg.setError(getString(R.string.input_error_username));
-            edit_username_reg.requestFocus();
-        }
-
         if (password.isEmpty()) {
             edit_password_reg.setError(getString(R.string.input_error_password));
             edit_password_reg.requestFocus();
@@ -97,6 +92,11 @@ public class Register_User extends AppCompatActivity {
         if (password.length() < 6) {
             edit_password_reg.setError(getString(R.string.input_error_password_length));
             edit_password_reg.requestFocus();
+        }
+
+        if(password!=rePassword){
+            edit_password_retype_reg.setError("Password did not match");
+            edit_password_retype_reg.requestFocus();
         }
 
         if (phone.isEmpty()) {
@@ -117,10 +117,10 @@ public class Register_User extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
 
-                            Users user = new Users(name, username, email, phone);
+                            Users user = new Users(name, email, phone);
 
                             FirebaseDatabase.getInstance().getReference("data").child("users")
-                                    .child(username)                                            //FirebaseAuth.getInstance().getCurrentUser().getUid()
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

@@ -103,25 +103,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Username"
-                android:textSize="16dp"
-                android:textColor="#2a95db"
-                android:layout_marginBottom="5dp"/>
-
-            <EditText
-                android:id="@+id/edittext_username_reg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingVertical="15dp"
-                android:hint="Enter Username"
-                style="@style/ButtonCornerDark"
-                android:layout_marginBottom="20dp"
-                android:textSize="16sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="Password"
                 android:textSize="16dp"
                 android:textColor="#2a95db"
@@ -129,6 +110,26 @@
 
             <EditText
                 android:id="@+id/edittext_password_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingVertical="15dp"
+                android:hint="Enter Password"
+                style="@style/ButtonCornerDark"
+                android:layout_marginBottom="20dp"
+                android:inputType="textPassword"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Re-type Password"
+                android:textSize="16dp"
+                android:textColor="#2a95db"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/edittext_retype_password_reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"

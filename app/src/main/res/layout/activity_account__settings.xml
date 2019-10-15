@@ -30,7 +30,7 @@
         android:id="@+id/textview_change_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Username"
+        android:text="Change Mobile Number"
         android:textColor="@color/colorSecondary"
         android:textSize="20sp"
         android:layout_marginBottom="50dp"
