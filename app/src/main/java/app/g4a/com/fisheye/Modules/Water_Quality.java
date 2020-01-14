@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -32,12 +33,15 @@ import app.g4a.com.fisheye.R;
 public class Water_Quality extends AppCompatActivity {
 
     ImageView image_back_waterq;
-    TextView text_date, text_DO, text_water_temp, text_temp, text_ph;
+    TextView text_date, text_DO, text_water_temp, text_ph;
     TextClock text_time;
+
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private FirebaseAuth mAuth;
-    private FirebaseStorage storage;
+
+    Pond_Info pondInfo;
+
     String currentDate,water_temp,ph,do2;
 
     @Override
@@ -50,9 +54,10 @@ public class Water_Quality extends AppCompatActivity {
         text_time = findViewById(R.id.textclock_time);
         text_DO = findViewById(R.id.textview_DO);
         text_water_temp = findViewById(R.id.textview_water_temp);
-        text_temp = findViewById(R.id.textview_temp);
         text_ph = findViewById(R.id.textview_ph);
+
         database = FirebaseDatabase.getInstance();
+        pondInfo=new Pond_Info();
 
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat mdformat = new SimpleDateFormat("yyyy-MM-dd");
@@ -74,32 +79,36 @@ public class Water_Quality extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                water_temp = dataSnapshot.child("water_temp").getValue().toString();
-                ph = dataSnapshot.child("pH").getValue().toString();
-                do2 = dataSnapshot.child("dislv_O2").getValue().toString();
-                text_water_temp.setText(water_temp);
-                text_ph.setText(ph);
-                text_DO.setText(do2);
+                if(dataSnapshot.exists()) {
+                    water_temp = dataSnapshot.child("water_temp").getValue().toString();
+                    ph = dataSnapshot.child("pH").getValue().toString();
+                    do2 = dataSnapshot.child("dislv_O2").getValue().toString();
+
+                    text_water_temp.setText(water_temp + "C");
+                    text_ph.setText(ph);
+                    text_DO.setText(do2 + "mg/L");
+                }
+                else{
+                    Toast.makeText(pondInfo, "Configure Pond first!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(Water_Quality.this,MainActivity.class);
+                    startActivity(intent);
+                }
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

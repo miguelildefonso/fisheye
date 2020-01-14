@@ -1,9 +1,13 @@
 package app.g4a.com.fisheye.Modules;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +15,7 @@ import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -22,27 +27,31 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import app.g4a.com.fisheye.Adapters.Walkthrough_Adapter;
 import app.g4a.com.fisheye.R;
 
 public class Login_Activity extends AppCompatActivity {
 
-    EditText edit_email, edit_password;
+    TextInputEditText edit_email, edit_password;
     Button btn_login;
     TextView text_signup, text_forgot_password;
-    ProgressBar progress_login;
     ProgressDialog pd;
 
     private FirebaseAuth auth;
+    private FirebaseUser user;
     private FirebaseDatabase database;
     private DatabaseReference reference;
 
-    String emailtext, passtext;
+    String emailtext, passtext, status;
     int trials=0;
 
     @Override
@@ -55,18 +64,20 @@ public class Login_Activity extends AppCompatActivity {
         btn_login = findViewById(R.id.button_login);
         text_signup = findViewById(R.id.textview_signup);
         text_forgot_password = findViewById(R.id.textview_forgot_password);
-        progress_login = findViewById(R.id.progressbar_login);
         pd = new ProgressDialog(this);
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(trials<3)
-                    loginUser();
-                else
+                     loginUser();
+                else {
                     openDialog();
+                }
             }
         });
 
@@ -117,15 +128,21 @@ public class Login_Activity extends AppCompatActivity {
 
     private void recover(String email)
     {
-        showLoadingPrompt(true);
+        final ProgressDialog progress = new ProgressDialog(Login_Activity.this);
+        progress.setTitle("Sending Email");
+        progress.setMessage("Please wait...");
+        progress.setCancelable(false);
+        progress.show();
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful())
+                if(task.isSuccessful()) {
+                    progress.hide();
                     Toast.makeText(Login_Activity.this, "Email sent", Toast.LENGTH_SHORT).show();
+                }
                 else {
+                    progress.hide();
                     Toast.makeText(Login_Activity.this, "Email not sent", Toast.LENGTH_SHORT).show();
-                    showLoadingPrompt(false);
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -152,40 +169,82 @@ public class Login_Activity extends AppCompatActivity {
             return;
         }
 
-        showLoadingPrompt(true);
+        final ProgressDialog progress = new ProgressDialog(Login_Activity.this);
+        progress.setTitle("Logging in");
+        progress.setMessage("Please wait...");
+        progress.setCancelable(false);
+        progress.show();
         auth.signInWithEmailAndPassword(emailtext,passtext).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (!task.isSuccessful()) {
-                    showLoadingPrompt(false);
+                    progress.hide();
                     Toast.makeText(Login_Activity.this, "Login failed!" , Toast.LENGTH_SHORT).show();
                     trials++;
                 } else {
+                    progress.hide();
+                    user = auth.getCurrentUser();
+                    reference = FirebaseDatabase.getInstance().getReference().child("data").child("users").child(user.getUid());
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.exists()){
+                                status = dataSnapshot.child("status").getValue().toString();
+                                if(status.equals("0")){
+                                    Intent intent = new Intent(Login_Activity.this, Select_Pond.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else{
+                                    Intent intent = new Intent(Login_Activity.this, Walk_Through.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                        }
+                    });
                     Toast.makeText(Login_Activity.this, "Login success!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Login_Activity.this, Select_Pond.class);
-                    startActivity(intent);
-                    finish();
+                    btn_login.setEnabled(false);
+                    text_forgot_password.setEnabled(false);
+                    text_signup.setEnabled(false);
+                    edit_email.setEnabled(false);
+                    edit_password.setEnabled(false);
                     trials=0;
                 }
             }
         });
     }
 
-    private void showLoadingPrompt(boolean isShown) {
-        if (isShown) {
-            progress_login.bringToFront();
-            btn_login.setEnabled(false);
-            progress_login.setVisibility(View.VISIBLE);
-        } else {
-            progress_login.bringToFront();
-            btn_login.setEnabled(true);
-            progress_login.setVisibility(View.GONE);
-        }
-    }
-
     public void openDialog()
     {
-        Dialog_Login dialogLogin = new Dialog_Login();
-        dialogLogin.show(getSupportFragmentManager(),"dialog login");
+        AlertDialog.Builder builder = new AlertDialog.Builder(Login_Activity.this);
+        View mview = getLayoutInflater().inflate(R.layout.layout_dialog_login,null);
+        builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+               finish();
+            }
+        });
+        builder.setView(mview);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+       // Dialog_Login dialogLogin = new Dialog_Login();
+       // dialogLogin.show(getSupportFragmentManager(),"dialog login");
+
+    }
+
+    public boolean isConnected(){
+        boolean isConnected = false;
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState()==NetworkInfo.State.CONNECTED){
+            isConnected = true;
+        }else
+            isConnected = false;
+        return isConnected;
     }
 }

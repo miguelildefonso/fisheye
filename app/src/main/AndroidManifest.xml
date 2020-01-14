@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.g4a.com.fisheye">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
@@ -9,26 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Modules.Statistics"></activity>
-        <activity android:name=".Modules.About" />
-        <activity android:name=".Modules.Pond_Info" />
+        <activity android:name=".Modules.Sample"/>
+
+        <activity android:name=".Modules.Phone_Authentication" />
+        <activity android:name=".Modules.Update_Configuration" />
         <activity android:name=".Modules.Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Modules.Pond_Configuration" />
         <activity android:name=".Modules.Register_User" />
-        <activity android:name=".Modules.Settings" />
+        <activity android:name=".Modules.Login_Activity" />
+        <activity android:name=".Modules.Walk_Through" />
         <activity android:name=".Modules.Select_Pond" />
-        <activity android:name=".Modules.Account_Settings" />
+        <activity android:name=".Modules.MainActivity" />
         <activity android:name=".Modules.Water_Quality" />
+        <activity android:name=".Modules.Statistics" />
+        <activity android:name=".Modules.About" />
+        <activity android:name=".Modules.Pond_Info" />
+        <activity android:name=".Modules.Settings" />
+        <activity android:name=".Modules.Configuration_Setting" />
+        <activity android:name=".Modules.Account_Settings" />
         <activity android:name=".Modules.Account_Setting_Pword" />
         <activity android:name=".Modules.Account_Setting_Mobile" />
-        <activity android:name=".Modules.Login_Activity" />
-        <activity android:name=".Modules.MainActivity" />
     </application>
 
 </manifest>

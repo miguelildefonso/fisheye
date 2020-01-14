@@ -117,8 +117,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/image_do"
                         android:layout_marginTop="15dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="10 mg/L"
+                        android:layout_marginLeft="20dp"
+                        android:text=""
                         style="@style/TextViewTitle"
                         android:textSize="30sp"
                         android:textColor="@color/colorPrimaryDark" />
@@ -160,51 +160,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/image_wtemp"
                         android:layout_marginTop="15dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="100 C"
-                        style="@style/TextViewTitle"
-                        android:textSize="30sp"
-                        android:textColor="@color/colorPrimaryDark" />
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            //air temperature
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                style="@style/ButtonInvi"
-                android:layout_marginHorizontal="30dp"
-                android:padding="10dp"
-                android:elevation="5dp"
-                android:layout_marginTop="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Air\nTemperature"
-                    style="@style/TextViewTitle"
-                    android:layout_marginBottom="5dp"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/image_atemp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:src="@drawable/ic_airtemp"
-                        android:layout_marginLeft="20dp"/>
-                    <TextView
-                        android:id="@+id/textview_temp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/image_atemp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="30 C"
+                        android:layout_marginLeft="20dp"
+                        android:text=""
                         style="@style/TextViewTitle"
                         android:textSize="30sp"
                         android:textColor="@color/colorPrimaryDark" />
@@ -227,7 +184,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="pH Level"
+                    android:text="pH\nLevel"
                     style="@style/TextViewTitle"
                     android:layout_marginBottom="5dp"/>
 
@@ -247,8 +204,8 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/image_ph"
                         android:layout_marginTop="15dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="5.4"
+                        android:layout_marginLeft="20dp"
+                        android:text=""
                         style="@style/TextViewTitle"
                         android:textSize="30sp"
                         android:textColor="@color/colorPrimaryDark" />

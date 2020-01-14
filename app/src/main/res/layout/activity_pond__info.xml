@@ -25,124 +25,92 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="75dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/EditTextDefaultPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Pond Name: "
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/textview_pondname"
+            style="@style/EditTextDefaultPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pond Name"
+            android:textColor="@color/colorPrimaryDark" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/EditTextDefaultPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Pond Dimension: "
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textview_pond_dimen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/EditTextDefaultPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Pond Name"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/EditTextDefaultPrimary"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="(length x width x depth)"
+        android:textSize="10sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/EditTextDefaultPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Pond Water Type: "
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textview_water_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/EditTextDefaultPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Pond Name"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pond Dimension: "
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginBottom="2dp"/>
-
-            <TextView
-                android:id="@+id/textview_pond_dimen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="l x w x d"
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginRight="10dp" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(length x width x depth)"
-            android:textSize="12dp"
-            android:textColor="#2a95db"
-            android:layout_marginBottom="20dp"/>
-
-
-        //fish type
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fish Type:"
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginRight="10dp"/>
-
-            <TextView
-                android:id="@+id/textview_fish_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fish Type"
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginRight="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date Released:"
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginRight="10dp"/>
-
-            <TextView
-                android:id="@+id/textview_date_release_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date Released"
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginRight="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="40dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Estimated Harvest Date: "
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginRight="10dp"/>
-
-            <TextView
-                android:id="@+id/textview_date_harvest_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date Harvest"
-                android:textSize="18dp"
-                android:textColor="#2a95db"
-                android:layout_marginRight="10dp" />
-
-        </LinearLayout>
-
-        //treshold table
+        android:padding="10dp">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -152,44 +120,51 @@
             android:background="@color/colorAccent">
 
             <TableRow>
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1"
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Water\nTemperature"
+                    android:text="Date\nReleased"
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimaryDark"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dissolved\nOxygen"
+                    android:text="Date\nHarvest"
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimaryDark"
                     android:layout_weight="1"
                     android:gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="pH Level"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-
             </TableRow>
 
             <TableRow>
-
                 <TextView
-                    android:id="@+id/textview_temp_info"
+                    android:id="@+id/textview_fish1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="27C"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_release1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:textSize="18dp"
                     android:textColor="@color/colorSecondary"
                     android:background="#fff"
@@ -200,10 +175,221 @@
                     android:layout_marginBottom="1dp"/>
 
                 <TextView
-                    android:id="@+id/textview_do_info"
+                    android:id="@+id/textview_harvest1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5mg/L"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview_fish2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_release2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_harvest2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview_fish3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_release3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textview_harvest3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview_fish4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_release4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_harvest4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        //threshold table
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/colorAccent">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Water\nTemperature\n(in Celsius)"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dissolved\nOxygen\n(in mg/L)"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pH\nLevel"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="min"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_min_temp_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 deg C"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_min_do_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 mg/L"
                     android:textSize="18dp"
                     android:textColor="@color/colorSecondary"
                     android:background="#fff"
@@ -213,10 +399,66 @@
                     android:layout_marginBottom="1dp"/>
 
                 <TextView
-                    android:id="@+id/textview_ph_info"
+                    android:id="@+id/textview_min_ph_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.4"
+                    android:text="6.5"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="max"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_max_temp_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="31 deg C"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_max_do_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - "
+                    android:textSize="18dp"
+                    android:textColor="@color/colorSecondary"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+                <TextView
+                    android:id="@+id/textview_max_ph_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9.0"
                     android:textSize="18dp"
                     android:textColor="@color/colorSecondary"
                     android:background="#fff"
@@ -230,10 +472,10 @@
         </TableLayout>
 
         <Button
-            android:id="@+id/button_delete_pond"
+            android:id="@+id/button_update_pond"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete pond"
+            android:text="Update pond"
             style="@style/ButtonFilledSecondary"
             android:layout_marginTop="30dp"
             />

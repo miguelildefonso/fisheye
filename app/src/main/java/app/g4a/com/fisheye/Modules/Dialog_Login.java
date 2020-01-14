@@ -25,6 +25,7 @@ public class Dialog_Login extends AppCompatDialogFragment {
                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        //getActivity().finish();
                     }
                 });
         return builder.create();

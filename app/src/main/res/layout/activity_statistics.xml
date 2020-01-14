@@ -25,4 +25,91 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="75dp"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            //graph for DO
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dissolved Oxygen"
+                    style="@style/TextViewTitle"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <com.jjoe64.graphview.GraphView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/graphDO"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="visible"
+                    android:scrollbars="horizontal"/>
+
+            </LinearLayout>
+
+            //graph for water temp
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Water Temperature"
+                    style="@style/TextViewTitle"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"/>
+
+                <com.jjoe64.graphview.GraphView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/graphWT"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+
+            //graph for ph
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="pH Level"
+                    style="@style/TextViewTitle"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"/>
+
+                <com.jjoe64.graphview.GraphView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/graphPH"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Modules.Update_Fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_screen">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Pond\nConfiguration"
+        android:textAlignment="center"
+        style="@style/TextViewTitle"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="135dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textview_pond_no_config_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pond No: x"
+                android:textSize="18dp"
+                android:textColor="#2a95db"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pond Dimension:"
+                android:textSize="18dp"
+                android:textColor="#2a95db"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(in meters) (L = length, W = width, D = depth)"
+                android:textSize="12dp"
+                android:textColor="#2a95db"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                //length of pond
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L:"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:id="@+id/edittext_length_update"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonCornerDark"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp"/>
+
+                //width of pond
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="W:"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:id="@+id/edittext_width_update"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonCornerDark"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp"/>
+
+                //depth of pond
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="D:"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"/>
+
+                <EditText
+                    android:id="@+id/edittext_depth_update"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonCornerDark"
+                    android:inputType="numberDecimal"
+                    android:textSize="18dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Freshwater: "
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginRight="10dp" />
+
+                <Switch
+                    android:id="@+id/switch_freshwater_update"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"  />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fish Type:"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date Released:"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            //1st fish
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <Spinner
+                    android:id="@+id/spinner_fish_type1_update"
+                    android:layout_width="130dp"
+                    android:layout_height="43dp"
+                    style="@style/ButtonCornerDark"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginBottom="3dp">
+                </Spinner>
+
+                <EditText
+                    android:id="@+id/edittext_date_released1_update"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonCornerDark"
+                    android:textSize="16dp"
+                    android:inputType="date"
+                    android:focusableInTouchMode="false"/>
+
+                <ImageView
+                    android:id="@+id/imageview_delete1_update"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_trash"
+                    android:layout_marginLeft="25dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            //2nd fish
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <Spinner
+                    android:id="@+id/spinner_fish_type2_update"
+                    android:layout_width="130dp"
+                    android:layout_height="43dp"
+                    style="@style/ButtonCornerDark"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginBottom="3dp">
+                </Spinner>
+
+                <EditText
+                    android:id="@+id/edittext_date_released2_update"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonCornerDark"
+                    android:textSize="16dp"
+                    android:inputType="date"
+                    android:focusableInTouchMode="false"/>
+
+                <ImageView
+                    android:id="@+id/imageview_delete2_update"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_trash"
+                    android:layout_marginLeft="25dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            //3rd fish
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <Spinner
+                    android:id="@+id/spinner_fish_type3_update"
+                    android:layout_width="130dp"
+                    android:layout_height="43dp"
+                    style="@style/ButtonCornerDark"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginBottom="3dp">
+                </Spinner>
+
+                <EditText
+                    android:id="@+id/edittext_date_released3_update"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonCornerDark"
+                    android:textSize="16dp"
+                    android:inputType="date"
+                    android:focusableInTouchMode="false"/>
+
+                <ImageView
+                    android:id="@+id/imageview_delete3_update"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_trash"
+                    android:layout_marginLeft="25dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            //4th fish
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <Spinner
+                    android:id="@+id/spinner_fish_type4_update"
+                    android:layout_width="130dp"
+                    android:layout_height="43dp"
+                    style="@style/ButtonCornerDark"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginBottom="3dp">
+                </Spinner>
+
+                <EditText
+                    android:id="@+id/edittext_date_released4_update"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonCornerDark"
+                    android:textSize="16dp"
+                    android:inputType="date"
+                    android:focusableInTouchMode="false"/>
+
+                <ImageView
+                    android:id="@+id/imageview_delete4_update"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_trash"
+                    android:layout_marginLeft="25dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_apply_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ButtonFilledSecondary"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginHorizontal="70dp"
+                android:text="Apply changes" />
+
+            <TextView
+                android:id="@+id/textview_cancel_config_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="cancel"
+                android:textSize="18dp"
+                android:textAlignment="center"
+                android:textColor="#2a95db"
+                android:layout_marginBottom="15dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

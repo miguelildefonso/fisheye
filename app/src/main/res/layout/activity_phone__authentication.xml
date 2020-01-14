@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Modules.Phone_Authentication"
+    android:background="@drawable/bg_screen"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/textview_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewTitle"
+        android:text="Verify your Email address"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/colorSecondary"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:id="@+id/textview_name_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        style="@style/TextViewTitle"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/colorSecondary"/>
+
+    <TextView
+        android:id="@+id/textview_email_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        style="@style/TextViewTitle"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/colorSecondary"/>
+
+    <Button
+        android:id="@+id/button_submit_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ButtonFilledSecondary"
+        android:layout_marginTop="25dp"
+        android:text="Login to your account"/>
+
+    <TextView
+        android:id="@+id/textview_resend_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text=""
+        style="@style/TextViewTitle"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/colorSecondary"/>
+
+
+</LinearLayout>

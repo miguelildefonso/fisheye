@@ -1,7 +1,9 @@
 package app.g4a.com.fisheye.Modules;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,8 +59,7 @@ public class Select_Pond extends AppCompatActivity {
         image_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Select_Pond.this,Login_Activity.class);
-                startActivity(intent);
+                alertDialog();
             }
         });
 
@@ -66,7 +67,7 @@ public class Select_Pond extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pondName = text_pond1.getText().toString();
-                saveUserLog(); 
+                saveUserLog();
                 Intent intent = new Intent(Select_Pond.this,MainActivity.class);
                 startActivity(intent);
             }
@@ -75,30 +76,30 @@ public class Select_Pond extends AppCompatActivity {
         linear_pond2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pondName = text_pond2.getText().toString();
+                /*pondName = text_pond2.getText().toString();
                 saveUserLog();
                 Intent intent = new Intent(Select_Pond.this,MainActivity.class);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
 
         linear_pond3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pondName = text_pond3.getText().toString();
+                /*pondName = text_pond3.getText().toString();
                 saveUserLog();
                 Intent intent = new Intent(Select_Pond.this,MainActivity.class);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
 
         linear_pond4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pondName = text_pond4.getText().toString();
+                /*pondName = text_pond4.getText().toString();
                 saveUserLog();
                 Intent intent = new Intent(Select_Pond.this,MainActivity.class);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
     }
@@ -108,7 +109,28 @@ public class Select_Pond extends AppCompatActivity {
 
     public void saveUserLog(){
         log = new UserLog(uid,pondName);
-        mDatabase= FirebaseDatabase.getInstance().getReference().child("data").child("user_log").push();
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("data").child("user_log").child("currentUser");
         mDatabase.setValue(log);
+    }
+
+    private void alertDialog() {
+        AlertDialog.Builder dialog=new AlertDialog.Builder(this);
+        dialog.setMessage("Are you sure you want to logout?");
+        dialog.setTitle("Confirm Logout");
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,int which) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Select_Pond.this,Login_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        dialog.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        AlertDialog alertDialog=dialog.create();
+        alertDialog.show();
     }
 }

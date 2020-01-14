@@ -9,13 +9,28 @@
     Rojo, Mark David\n</string>
     <string name="input_error_name">Name required</string>
     <string name="input_error_email">Email required</string>
+    <string name="input_error_duplicate_email">Email already taken. Please provide another valid email.</string>
     <string name="input_error_username">Username required</string>
     <string name="input_error_password">Password required</string>
     <string name="input_error_phone">Phone required</string>
     <string name="input_error_password_length">Password should be at least 6 characters long</string>
+    <string name="input_error_password_match">Password did not match</string>
     <string name="input_error_phone_invalid">Enter a valid phone number</string>
     <string name="registration_success">Registered Successfully</string>
     <string name="input_error_email_invalid">Enter a valid email</string>
     <string name="dialog_login">You have exceeded your limit in login attempts.\nThe app will close.</string>
+    <string name="dialog_connection">Please check your internet connection and try again.</string>
+    <string-array name="fish_list">
+        <item>Milkfish (Bangus)</item>
+        <item>Tilapia</item>
+        <item>Prawns</item>
+        <item>Crabs</item>
+    </string-array>
+    <string name="credits_malolos">Provincial Agriculture Office\nProvincial Capitol Compound,\nCity of Malolos, Bulacan</string>
+    <string name="credits_meyc">City Agriculture Office\nCity of Meycauayan, Bulacan</string>
+    <string name="credits_pdm">Pambayang Dalubhasaan ng Marilao\nAbangan Norte, Marilao, Bulacan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -65,9 +65,85 @@
                 android:textColor="#2a95db"
                 android:layout_marginBottom="20dp"/>
 
+            <TextView
+                android:id="@+id/textview_credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Credits"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="20dp" />
 
+            <TextView
+                android:id="@+id/textview_tutorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User's Guide"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can reach us through our Facebook\nand Gmail account. "
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="center"
+                android:layout_marginBottom="20dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_marginTop="-15dp">
+
+                <ImageView
+                    android:id="@+id/image_facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_facebook" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/image_facebook"
+                    android:text="facebook.com/fisheye"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="15dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_marginTop="-30dp">
+
+                <ImageView
+                    android:id="@+id/image_gmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_gmail"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/image_gmail"
+                    android:text="fisheye.0918@gmail.com"
+                    android:textSize="18dp"
+                    android:textColor="#2a95db"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="15dp"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

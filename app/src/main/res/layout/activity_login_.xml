@@ -32,18 +32,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
         style="@style/ButtonInvi"
         android:layout_marginHorizontal="20dp"
         android:elevation="5dp">
         
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             style="@style/ButtonCornerDark"
             android:orientation="horizontal"
             android:layout_marginBottom="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginHorizontal="20dp">
 
             <RelativeLayout
@@ -56,17 +55,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_username"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="10dp"/>
 
-                <EditText
-                    android:id="@+id/edittext_username"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/image_username"
-                    android:paddingLeft="20dp"
-                    android:hint="email"
-                    android:inputType="textEmailAddress"
-                    style="@style/ButtonInvi"/>
+                    app:passwordToggleEnabled="true"
+                    android:layout_toRightOf="@id/image_username">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edittext_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_username"
+                        android:paddingLeft="20dp"
+                        android:hint="email"
+                        android:inputType="textEmailAddress"
+                        style="@style/ButtonInvi"/>
+
+
+                </android.support.design.widget.TextInputLayout>
 
             </RelativeLayout>
 
@@ -74,11 +82,11 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             style="@style/ButtonCornerDark"
             android:orientation="horizontal"
-            android:layout_marginBottom="30dp"
-            android:layout_marginHorizontal="20dp">
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="30dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -89,21 +97,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_lock"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="10dp"/>
 
-                <EditText
-                    android:id="@+id/edittext_password"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/image_password"
-                    android:paddingLeft="20dp"
-                    android:hint="password"
-                    android:inputType="textPassword"
-                    style="@style/ButtonInvi"/>
+                    app:passwordToggleEnabled="true"
+                    android:layout_toRightOf="@id/image_password">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edittext_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:hint="password"
+                        android:inputType="textPassword"
+                        style="@style/ButtonInvi"/>
+
+                </android.support.design.widget.TextInputLayout>
 
             </RelativeLayout>
 
         </LinearLayout>
+
+
         
     </LinearLayout>
 
