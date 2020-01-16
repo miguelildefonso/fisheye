@@ -59,6 +59,14 @@ public class Account_Setting_Pword extends AppCompatActivity {
             }
         });
 
+        text_cancel_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Account_Setting_Pword.this, Account_Settings.class);
+                startActivity(intent);
+            }
+        });
+
         button_password_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

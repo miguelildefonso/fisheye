@@ -81,11 +81,19 @@ public class Settings extends AppCompatActivity {
                 StorageReference storageRef = storage.getReference();
                 StorageReference ref = storageRef.child("csv/sensor_readings.csv");
 
+                final ProgressDialog progress = new ProgressDialog(Settings.this);
+                progress.setTitle("Downloading your file");
+                progress.setMessage("Please wait while the download finishes...");
+                progress.setCancelable(true);
+                progress.show();
+
                 ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
+                        progress.hide();
                         String url = uri.toString();
                         downloadFiles(Settings.this,"sensor_readings",".csv",DIRECTORY_DOWNLOADS,url);
+                        Toast.makeText(Settings.this, "File downloaded.", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

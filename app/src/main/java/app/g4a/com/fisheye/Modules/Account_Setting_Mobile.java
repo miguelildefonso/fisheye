@@ -61,6 +61,14 @@ public class Account_Setting_Mobile extends AppCompatActivity {
             }
         });
 
+        text_cancel_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Account_Setting_Mobile.this, Account_Settings.class);
+                startActivity(intent);
+            }
+        });
+
         button_user_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +81,7 @@ public class Account_Setting_Mobile extends AppCompatActivity {
                                 if (task.isSuccessful())
                                     changeContact();
                                 else
-                                    Toast.makeText(Account_Setting_Mobile.this, "Password error", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Account_Setting_Mobile.this, "Password error", Toast.LENGTH_LONG).show();
                             }
                         });
                     }
@@ -126,6 +134,7 @@ public class Account_Setting_Mobile extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         progress.hide();
                         if (task.isSuccessful()) {
+                            Toast.makeText(Account_Setting_Mobile.this, "Your contact number was successfully updated!", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(Account_Setting_Mobile.this, Account_Settings.class);
                             startActivity(intent);
                         } else {

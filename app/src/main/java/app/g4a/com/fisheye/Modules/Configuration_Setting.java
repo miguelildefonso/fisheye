@@ -120,6 +120,14 @@ public class Configuration_Setting extends AppCompatActivity{
             }
         });
 
+        text_cancel_config.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Configuration_Setting.this, Settings.class);
+                startActivity(intent);
+            }
+        });
+
         edit_date1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
